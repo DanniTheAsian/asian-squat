@@ -2,9 +2,6 @@ export {}
 
 let asianCounter = 0
 
-// ----------------------------
-// Math helpers
-// ----------------------------
 
 function angle(a,b,c){
   const ab = [a.x-b.x, a.y-b.y, a.z-b.z]
@@ -29,9 +26,7 @@ function dist2D(a,b){
 
 function vis(p){ return (p?.visibility ?? 0) }
 
-// ----------------------------
-// CORE: sideScore
-// ----------------------------
+
 
 function sideScore(l, side){
 
@@ -94,9 +89,7 @@ function sideScore(l, side){
   }
 }
 
-// ----------------------------
-// Helpers
-// ----------------------------
+
 
 function bothSides(l){
   const L = sideScore(l,"L")
@@ -113,9 +106,6 @@ function bestSide(l){
     : sides.R
 }
 
-// ----------------------------
-// Asian squat detection
-// ----------------------------
 
 function isAsianSquat3D(l){
 
@@ -128,18 +118,12 @@ function isAsianSquat3D(l){
 
   const { L, R } = sides
 
-  // -------------------------------------------------
-  // 🔎 Detect view (front vs side)
-  // -------------------------------------------------
 
   const hipDistance2D = dist2D(l[23], l[24])
   const isSideView = hipDistance2D < 0.08   // justér 0.06–0.10 hvis nødvendigt
 
   let poseOk = false
 
-  // =================================================
-  // SIDE VIEW
-  // =================================================
   if(isSideView){
 
     // Vælg mest synlige side
