@@ -120,7 +120,7 @@ style="position:absolute"
 <p>
 {{ asian
 ? "Asiat!"
-: "Hmmm måske ikke......"
+: "Ikke Asiat......"
 }}
 </p>
 <br>
